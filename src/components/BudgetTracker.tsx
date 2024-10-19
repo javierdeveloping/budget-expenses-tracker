@@ -3,6 +3,7 @@ import { useBudget } from "../hooks/useBudget";
 import AmountDisplay from "./AmountDisplay";
 import { useMemo } from "react";
 import { BudgetActionsNames } from "../reducers/budget-reducer";
+import "react-circular-progressbar/dist/styles.css";
 
 export default function BudgetTracker() {
   const { state, totalExpenses, remainingBudget, dispatch } = useBudget();
@@ -13,7 +14,7 @@ export default function BudgetTracker() {
   );
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div className="flex ">
+      <div>
         {/* <img src="/grafico.jpg" alt="Grafica de gasto"></img> */}
         <CircularProgressbar
           value={+percentage}
